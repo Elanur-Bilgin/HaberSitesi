@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8" />
+<title>ANASAYFA</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-2.1.3.js"> </script>
+
+<script type="text/javascript">
+$( function(){			
+			var Slider=0;
+			$.Slider=function(toplam){
+				 $("#slider ul#slider_button li").removeClass("aktif");
+				 $("#slider ul#slider_resim li").hide();
+				 if(Slider < toplam-1){
+					  Slider++;
+					  $("#slider ul#slider_button li:eq("+Slider+")").addClass("aktif");
+					  $("#slider ul#slider_resim li:eq("+Slider+")").fadeIn("fast");
+					  }
+				 else{
+					  $("#slider ul#slider_button li:first").addClass("aktif"); 
+					  $("#slider ul#slider_resim li:first").fadeIn("fast");
+					  Slider=0;
+					 }
+				}
+			var toplamLi=$("#slider ul#slider_resim li").length;
+			var interval=setInterval('$.Slider('+toplamLi+')',2000);
+			
+			<!--slider'ın üstüne geldiğinde durması için-->
+			$("#slider").hover( 
+				function(){ clearInterval(interval);},
+			<!--üzerinden çekilince devam etmesi için-->
+			    function(){interval=setInterval('$.Slider('+toplamLi+')',2000);}
+				);
+ $("#slider ul#slider_button li:first").addClass("aktif"); 
+ $("#slider ul#slider_resim li").hide();
+  $("#slider ul#slider_resim li:first").show();
+  $("#slider ul#slider_button li").click(function(){
+				var indis=$(this).index();
+				$("#slider ul#slider_button li").removeClass("aktif");
+				$(this).addClass("aktif");
+				$("#slider ul#slider_resim li").hide();
+				$("#slider ul#slider_resim li:eq("+indis+")").fadeIn("fast");
+				<!--üzerinden çekilince kaldığı yerden devam etmesi için-->
+			    Slider=indis;
+				return false
+  });
+ });
+</script>
+
+
+<script>
+   function  kaynakSec(etkiId,diger1,diger2,diger3){
+	        document.getElementById(etkiId).style.visibility="visible";
+            document.getElementById(diger1).style.visibility="hidden";
+            document.getElementById(diger2).style.visibility="hidden";
+            document.getElementById(diger3).style.visibility="hidden";			
+   }
+   
+</script>
+
+</head>
+<body>
+
+<header>
+<div id="logo">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/logo.jpg"/>
+</div>
+
+<div id="baslik"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/index.html"> ANASAYFA</a></div>
+
+<form action="http://www.google.com.tr/cse" id="cse-search-box"> 
+<div> <input type="hidden" name="cx" value="partner-pub-8354833046886770:fdhnsq-rocg" /> 
+<input type="hidden" name="ie" value="ISO-8859-9" /> 
+<input type="text" name="q" size="20" /> 
+<input type="submit" name="sa" value="Ara" />
+</div> </form> 
+<script type="text/javascript" src="http://www.google.com.tr/cse/brand?form=cse-search-box&amp;lang=tr"></script> 
+
+<script type="text/javascript">
+function date_operation()
+{	
+var time=new Date();
+
+function sifir_ekleme(veri)
+{   if(veri<10) return "0"+veri;
+    else return veri;
+}
+var day= sifir_ekleme(time.getDate());
+var mounth=sifir_ekleme(time.getMonth()); mounth=mounth+1;
+var year=sifir_ekleme(time.getFullYear());
+var date=day +"/"+mounth+"/"+year;
+
+var hours=time.toLocaleTimeString();
+
+document.getElementById("operation").value=date;
+document.getElementById("operation2").value=hours;
+}
+setInterval("date_operation()",1000);
+</script>
+
+<input  type="text"  id="operation" />
+<input  type="text"  id="operation2"/>
+</header>
+
+<nav>
+<ul>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/index.html"> ANA SAYFA</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset.html"> SİYASET</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi.html"> EKONOMİ</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin.html"> MAGAZİN</a></li>
+<li> <a href="http://sorubank2.ege.edu.tr/~b051140/proje/bilim.html">BİLİM</a></li>
+<li> <a href="http://sorubank2.ege.edu.tr/~b051140/proje/spor.html">SPOR</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/saglikk.html"> SAĞLIK</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/egitim.html"> EĞİTİM</a></li>
+<li class="nav_li_diger"> 
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+    <ul>
+    <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/kultur.html">KÜLTÜR</a></li>
+    <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema.html">SİNEMA</a></li>
+    </ul>
+</li>
+
+</ul>
+</div>
+</nav>
+
+<article>
+
+<div class="sok_haber">ŞOK</div>
+<div class="sok_haber1">ŞOK</div>
+<div class="sok_haber2">ŞOK</div>
+<div class="sok_haber3">ŞOK</div>
+<div class="sok_haber4">ŞOK</div>
+<div class="sok_haber5">ŞOK</div>
+<div class="sok_haber6">ŞOK</div>
+
+<div id="slider">
+<ul id="slider_resim">
+   <li style="background-image:url(img/fft2mm6450350.jpg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_5.html">Komutanların yargılanması Başbakan iznine bağlanıyor</a></li>
+   <li style="background-image:url(img/27157491.jpg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_3.html">Doğu Akdeniz’de krize neden olan sondajdan gaz çıkmadı </a></li>
+   <li style="background-image:url(img/fft81_mf2939834.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_4.html">Eminönü'nde asgari ücret protestosu</a></li>
+   <li style="background-image:url(img/26874087.jpg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_1.html">Suudi Arabistan 'hodri meydan' dedi, üretimi azaltmayacağını açıkladı </a></li>
+   <li style="background-image:url(img/fft81_mf2940724.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_5.html">TÜGİAD seçimini yaptı </a></li>
+   <li style="background-image:url(img/ocalan-iki-aylik-takvimlendirme-yapti-5109964.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html">Öcalan iki aylık takvimlendirme yaptı </a></li>
+   <li style="background-image:url(img/27191148.jpg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_2.html">MEB Osmanlıca kursunu onayladı </a></li>
+   <li style="background-image:url(img/osmanlica-dersini-kim-verecek--5068107.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_6.html">Osmanlıca dersini kim verecek? </a></li>
+   <li style="background-image:url(img/universite-ogrencilerine-burs-mujdesi--5058989.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_10.html"> Üniversite öğrencilerine burs müjdesi!</a></li>
+   <li style="background-image:url(img/taksi-soforlerine-psikolojik-destek-egitimi-5085855.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_8.html"> Taksi şoförlerine psikolojik destek eğitimi</a></li>
+   
+</ul>
+
+<ul id="slider_button">
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_5.html">1</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_3.html">2</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_4.html">3</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_1.html">4</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_5.html">5</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html">6</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_2.html">7</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_6.html">8</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_10.html">9</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_8.html">10</a></li>
+</ul>
+</div>
+
+
+
+   <div class="siteAd">
+    <ul class="site_cesit">
+      <li class="mil_hur_radikal_cumhur"  id="mil" onMouseOver="kaynakSec(1,2,3,4)">Milliyet</li>
+      <li class="mil_hur_radikal_cumhur" id="hur" onMouseOver="kaynakSec(2,1,3,4)">Hürriyet</li>
+      <li class="mil_hur_radikal_cumhur"id="pos" onMouseOver="kaynakSec(3,1,2,4)">Radikal</li>
+      <li class="mil_hur_radikal_cumhur" id="kisit" onMouseOver="kaynakSec(4,1,2,3)">Cumhuriyet</li>
+    </ul> 
+</div> 
+    <div class="clear"></div>
+    
+    
+   <div class="milliyet" id="1"> 
+   
+     <div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_1.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27173981.jpg" ></a>
+         <div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_1.html"target="_blank">Sayıştay'dan Fenerbahçe'ye şok...</a> </div> </div>
+
+
+     
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/bilim/bilim_alt_sayfa_1.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/img1.Jpeg" ></a>
+         <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_1.html"target="_blank">Facebook'taki fotoğraflarınız tehlikede</a></div> </div>
+ 
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_2.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/img2.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_2.html"target="_blank">Diyarbakır BŞB 1 - 4 Galatasaray</a> </div> </div>
+ 
+ <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_9.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fas-krali-5-ucakla-turkiye-ye-geldi-5110006.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_9.html"target="_blank">
+Fas Kralı 5 uçakla Türkiye’ye geldi</a> </div> </div>
+   
+<div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_8.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/bagcilar-da-yolsuzluk-eylemi-5110014.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_8.html"target="_blank">
+Bağcılar’da yolsuzluk eylemi</a> </div> </div>
+   
+   <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/ocalan-iki-aylik-takvimlendirme-yapti-5109964.Jpeg"></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html"target="_blank">
+Öcalan iki aylık takvimlendirme yaptı</a> </div> </div>
+
+</div>
+ 
+ 
+  
+   <div class="hurriyet" id="2">           
+  
+  
+   <div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_4.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27201122.jpg" ></a>
+         <div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/eğitim/eğitim_alt_sayfa_4.html"target="_blank">10 bin genç doktor yeniden tercih yapacak</a> </div> </div>
+     
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_2.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27161155.jpg" ></a>
+         <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_2.html"target="_blank">HDP seçime bağımsız girsin</a></div> </div>
+ 
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_3.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27161224.jpg"></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_3.html"target="_blank">Başbakan Davutoğlu: Kardeşimiz olsa kolunu koparırız</a> </div> </div>
+ 
+ <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_2.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/26874087.jpg"  ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_2.html"target="_blank">Suudi Arabistan 'hodri meydan' dedi, üretimi azaltmayacağını açıkladı</a> </div> </div>
+   
+<div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_3.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27156376.jpg"  ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_3.html"target="_blank">Çukurova Havalimanı'nı üstlenen Koçoğlu İnşaat iflas erteleme istedi</a> </div> </div>
+   
+   <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_4.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27157491.jpg"></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi/ekonomi_alt_sayfa_4.html"target="_blank">Doğu Akdeniz’de krize neden olan sondajdan gaz çıkmadı</a> </div> </div>
+
+    
+	
+	</div>  
+   <div class="radikal" id="3">           
+  
+   <div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_6.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2919773.Jpeg" ></a>
+         <div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_6.html"target="_blank">Beynimizin yarısıyla yaşamamız mümkün mü?</a> </div> </div>
+     
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_7.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2931058.Jpeg" ></a>
+         <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_7.html"target="_blank">'Arı sütünün kilosu 3-5 bin TL'</a></div> </div>
+ 
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_8.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2900205.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_8.html"target="_blank">Bir nefesle yağ yakıyoruz!</a> </div> </div>
+ 
+ <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_9.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2846258.Jpeg"></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_9.html"target="_blank">Sokağa çıkacak aile hekimlerine Sağlık Bakan'ndan uyarı</a> </div> </div>
+   
+<div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_10.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/gozunuzu-ovustrmak-nelere-neden-oluyor-biliyor-musunuz--5115443.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_10.html"target="_blank">Gözünüzü ovuşturmak nelere neden oluyor biliyor musunuz?</a> </div> </div>
+   
+   <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_1.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/depresyonun-nedeni-bulundu-5111886.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sağlık/sağlık_alt_sayfa_1.html"target="_blank">Depresyonun nedeni bulundu</a> </div> </div>
+
+   
+   
+   </div>  
+   <div class="cumhuriyet" id="4"> 
+             
+  <div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_3.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/-almanya-da-3-sevgilim-var--5114899.Jpeg" ></a>
+         <div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_3.html"target="_blank">'Almanya'da 3 sevgilim var'</a> </div> </div>
+     
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_7.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2947372.Jpeg" ></a>
+         <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_7.html"target="_blank">Show TV: Bu Tarz Benim'de eşi görülmemiş bir rezalet yaşandı!</a></div> </div>
+ 
+     <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_5.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2946406.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_5.html"target="_blank">Hayırlı evlat Tarkan</a> </div> </div>
+ 
+ <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_8.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2957052.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_8.html"target="_blank">Osman Özköylü dönemi sona erdi!</a> </div> </div>
+   
+<div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_9.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2957837.Jpeg" ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_9.html"target="_blank">Trabzonspor'da 9 futbolcu sakat</a> </div> </div>
+   
+   <div class="haber">
+ <a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_3.html">
+ <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/27174109.jpg"  ></a>
+        <div class="haber_baslik">
+ <a  href="http://sorubank2.ege.edu.tr/~b051140/proje/spor/spor_alt_sayfa_3.html"target="_blank">Salcano 40 yaşında</a> </div> </div>           
+             
+   </div>
+     
+</article>
+
+
+
+<aside>
+<table class="yazarlar">
+				<tr><td id="yazar_gradient">YAZARLAR</td></tr>
+				<tr><td class="yazar_haber_baslik"> HABERLER.COM Gazete Yazarlari</td></tr>
+				<tr><td><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf3855984.Jpeg" >Belma AKÇURA</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf2863550.Jpeg"/>Tunca BELGİN</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/jale_ozgenturk_200x200.jpg"/>Jale Özgentürk</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf1709163.Jpeg"  />Serpil ÇEVİKCAN</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/148.jpg"/>Mehmet Yılmaz</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/10.jpg" />Cengiz Candaryeni</td></tr>			
+</table>
+
+<div class="reklam"> 
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/images.jpg">
+</div>
+
+<table class="encok_okunan_haberler">
+<tr><td class="yazar_haber_baslik"> En Çok Okunan Haberler</td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_5.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2946406.Jpeg" >Hayırlı evlat Tarkan</a></td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/ocalan-iki-aylik-takvimlendirme-yapti-5109964.Jpeg"> Öcalan iki aylık takvimlendirme yaptı</a> </td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomik/ekonomik_alt_sayfa_6.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2945073.Jpeg" >Otomatik ödeme talimatı artık ücretli</a> </td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomik/ekonomik_alt_sayfa_8.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/iste-2015-memur-alimlari-5110546.Jpeg" >İşte 2015 memur alımları</a>  </td></tr>
+</table>
+             
+</aside>
+<div class="clear"></div>
+
+
+<footer>Tüm Hakları Saklıdır.     &#0169;DOST YAPIM</footer>
+
+</body>
+</html>

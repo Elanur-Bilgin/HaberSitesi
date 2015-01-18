@@ -1,0 +1,142 @@
+body{margin:0 auto; width:1000px;background-color:#333;}
+
+header #logo img{width:200px; height:120px;position:relative;top:-40px;left:+50px;float:left;}
+header{height:80px;padding-top:30px; }
+
+header form{position:relative; left:550px;top:+10px;}
+#operation,#operation2{-webkit-border-radius:20px;background-color:#999;text-align:center;position:relative; 
+           left:150px; top:-15px;px;width:10%;border-color:#000;}
+
+div#baslik a{font-size:30px;color:#FFF;font-weight:bold;position:relative; left:230px; top:+10px;}
+div#baslik a:hover{color:#F00;}
+
+
+
+nav{height:50px;background-color:#999;padding-top:30px;border-radius:20px;}
+nav ul{list-style-type:none;margin:auto;position:relative;left:-70px;}
+nav ul li {float:left;margin-right:20px;color:#FFF;font-size:18px;}
+nav ul li:hover{color:#F00;}
+nav ul li:hover ul {visibility:visible; opacity:1;}
+nav ul ul{box-shadow:3px 3px 4px #000;opacity:0.30;border-radius:20%;	visibility:hidden;border:2px solid;border-color:#FFF;
+background-color:#FFF;position:absolute;left:890px;top:19px;transition: opacity 1.0s ease-in-out;z-index:1;}
+nav ul ul li{display:block;float:none;position:relative;left:-25px;margin:2px;color:#000; -webkit-transition: height 1s;}
+li.nav_li_diger span{display: block;margin: 2px 0px 3px 0px;border: 1px solid white;height:2px;background: white;width: 20px;border-radius:35%;}
+nav ul li a{color:#FFF;display:block;text-decoration:none;}
+nav ul li a:hover{color:#F00;text-decoration:none;}
+nav ul ul li:hover{color:#F00;}
+nav ul ul li:first-child{margin-top:4px;}
+nav ul ul li a,visited{color:#CCC;}
+
+
+aside{float:left;width:30%;height:500px;background-color:#CCC;}
+aside ul {list-style:none;}
+aside ul li {margin-bottom:5px;}
+
+
+article{float:left;width:70%;min-height:1100px;}
+article div ul.site_cesit{list-style:none;position:relative;top:-10px;}
+article div ul li.mil_hur_radikal_cumhur{float:left;border-right:2px solid #FFF;padding:0 25px;position:relative;left:40px;color:#FFF;font-size:20px;}
+article div ul li#kisit{border-right:1px solid #C00;padding:0 25px;}
+article div.siteAd{border:2px solid #C00;background-color:#C00;height:40px;border-radius:10px;}
+
+
+
+.milliyet{visibility:visible;width:51.5%;height:568px;position:absolute;top:718px;left:175px;border:2px solid #C00;background-color:#FFF;}
+.hurriyet{visibility:hidden;width:51%;height:550px;position:absolute;top:718px;left:175px;border:2px solid #C00;background-color:#FFF;}
+.radikal{visibility:hidden;width:51%;height:550px;position:absolute;top:718px;left:175px;border:2px solid #C00;background-color:#FFF;}
+.cumhuriyet{visibility:hidden;width:51%;height:550px;position:absolute;top:718px;left:175px;border:2px solid #C00;background-color:#FFF;}
+
+
+article div.sok_haber{padding-top:41px;border:2px solid #333;width:150px;height:90px;float:left;margin:20px 5px 5px 30px; border-radius:15px; -webkit-animation: myfirst 5s; animation: myfirst 5s;background: radial-gradient(circle,red,black);color:#000;font-size:36px;font-weight:bold;text-align:center;}
+article div.sok_haber1{padding-top:35px ;border:2px solid #333;width:100px;height:60px;float:left;margin:5px 10px;left:100px;border-radius:10px;-webkit-animation: myfirst 5s;animation: myfirst 5s; background:radial-gradient(circle,red,black); color:#000;font-size:24px;font-weight:bold;text-align:center;}
+article div.sok_haber2{padding-top:30px;border:2px solid #333;width:60px;height:40px;margin:10px 5px;float:left;position:relative;top:50px;border-radius:8px;-webkit-animation: myfirst 5s;animation: myfirst 5s;background:radial-gradient(circle,red,black); color:#000;font-size:15px;font-weight:bold;text-align:center;}
+article div.sok_haber3{padding-top:20px;border:2px solid #333;width:80px;height:40px;margin:5px 3px;float:left;position:relative;top:15px;left:20px;border-radius:10px;-webkit-animation: myfirst 5s;animation: myfirst 5s;background:radial-gradient(circle,red,black); color:#000;font-size:20px;font-weight:bold;text-align:center;}
+article div.sok_haber4{padding-top:16px;border:2px solid #333;width:30px;height:20px;margin:5px 5px;float:left;position:relative;top:5px;left:80px;border-radius:5px;-webkit-animation: myfirst 5s;animation: myfirst 5s;background:radial-gradient(circle,red,black);color:#000;font-size:10px;font-weight:bold;text-align:center;}
+article div.sok_haber5{padding-top:14px;border:2px solid #333;width:50px;height:30px;margin:5px 5px;position:relative;top:70px;left:-20px;float:left;border-radius:7px;-webkit-animation: myfirst 5s; animation: myfirst 5s;background:radial-gradient(circle,red,black);color:#000;font-size:15px;font-weight:bold;text-align:center;}
+article div.sok_haber6{padding-top:38px;border:2px solid #333;width:110px;height:70px;margin:5px 5px;position:relative;left:90px;top:-8px;border-radius:15px;-webkit-animation: myfirst 5s; animation: myfirst 5s; background:radial-gradient(circle,red,black); color:#000;font-size:25px;font-weight:bold;text-align:center;float:left;}
+@-webkit-keyframes myfirst {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+@keyframes myfirst {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+
+div.haber_border{border:2px solid #900;height:792px;background:#999;background-opacity}
+div.haber {position:relative;left:40px; margin:50px 5px 0 15px; padding:5px ;border:1px solid #000;
+           height:200px;; width:150px; float:left; text-align:center;-webkit-border-radius:15px;background-color:#FFF;}	
+div.haber:hover{-webkit-border-bottom-width:thin;-webkit-box-shadow:7px 7px 3px #888888;border:1px solid #900;}
+div.haber img{ display:inline;margin:5px;border: 1px solid #ffffff;width:140px; width:125px; height:90px;}
+div.haber a:hover img { border: 0px solid;}
+div.haber_baslik{width:140px; margin:5px;border-top:2px solid;text-decoration:none;}
+
+
+a{text-decoration:none;}
+#slider ul,li{padding:0;  list-style:none;}
+#slider{overflow:hidden; width:695px;height:300px; margin:0 auto;position:relative; top:0px;border:2px solid #666 ;}
+#slider ul#slider_resim li{width:695px;height:300px; background:no-repeat;background-size: 695px 300px;position:relative; top:-16px; font-size:25px; text-align:center; }
+#slider ul#slider_button{position:absolute; top:253px; border:0px solid #333; opacity:0.5; width:900px; height:60px; background-color:#CCC;}
+#slider ul#slider_button li{float:left; color:#FFF; font-size:24px;border-right:3px solid #000;}
+#slider ul#slider_button li a{padding:5px 27px;}
+#slider ul#slider_button li.aktif a{background-color:#F00; border-radius:8px;}
+
+
+td#yazar_gradient{border-radius:10px;background: radial-gradient(circle,red,black);padding-left: 80px;margin: 50px auto;width:300px;font-size: 20px;}
+div#yazar_gradient{	border-radius:10px;background: radial-gradient(circle,red,black);padding-left: 80px;margin: 50px auto;width:220px;height:30px;font-size: 20px;}
+
+td.yazar_haber_baslik{text-shadow:0 0 3px #FF0000;font-size:20px;text-align:center;}
+#haberler_icerik img{width: auto; height: auto;}
+div#yorum_yap{background-color:#dddddd;width: auto;}
+aside table.yazarlar tr td,table.encok_okunan_haberler tr td{border-bottom:1px solid #000; padding:3px 0;}
+aside table.yazarlar {position:relative;top:0px;height: 300px;background-color:#966;}
+aside table.yazar {position:relative;top:0px;height: 300px;background-color:#FFFFFF;}
+
+aside table tr td{border-bottom:1px solid #dddddd; padding:3px 0;}
+table.yazarlar td img{width: 60px;height:60px;vertical-align:bottom;}
+p#satir_basi{text-indent: 40px;}
+span#yazinin_vurgulanmasi{text-decoration: underline; color:#003399; font-size:19px}
+img#resim_sola_yasla{float: right;width: 195px;margin-left:35px;}
+#yaziyi_kalin_yap{font-weight:bold;}
+td img{width: 60px;height: 60px;vertical-align:top;}
+
+h1#haber_baslik_stil{text-shadow: 0 0 3px #FF0000;font-size: 100%;}
+h1#haber_baslik_stil2{color:#0033CC;font-size: 140%;}
+
+
+
+
+
+
+div.reklam img{height:290px;width:300px;}
+
+#yorum_yap img{float: left;width: 80px;height: 80px;}
+#gonder{background-color:#999;margin-left:450px;}
+fieldset{background-color:#666666;border-radius: 20px; width:auto}
+form#cse-search-box {float:left;width:40%;}
+p.haber_yazi{text-align:left;padding:18px;}
+div.haber_yazi{ text-align:left;padding:40px; line-height:170%}
+aside table.encok_okunan_haberler{position:relative;top:-3px;height:328px;background-color:#F93;}
+aside table.encok_okunan_haberler img{width:60px;height:60px;float:left;}
+
+
+
+footer.son{height:60px;color:#000;background-color:#900;padding-top:20px;text-align:center;}
+.clear {clear:both;}
+
+footer#yorum_yap{height:60px;color:#000;background-color:#900;padding-top:20px;text-align:center;}
+
+
+li.reklam{width:240px;height:90px;}
+li.reklam a img {float: left;margin-right: 10px;border: 1px solid #d9d9d9; width:80px; height:75px;}
+span.reklam_baslik{font-size: 14px;color: #000000;display:block;text-decoration: none;}
+span.reklam_baslik:hover{color: #FF0000;}
+li.reklam {display: list-item;text-align: -webkit-match-parent;list-style: none;border-bottom:1px solid #dddddd;}
+ul.reklam_listesi{display: block;list-style-type: disc;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;
+-webkit-padding-start:10px;}
+aside div#reklam_kismi div.reklamlar{background: #ffffff;-webkit-box-shadow: 0 1px 1px 0 #d3d3d3;box-shadow: 0 1px 1px 0 #d3d3d3;width: 300px;overflow: hidden;margin-bottom: 10px;text-align: left;}

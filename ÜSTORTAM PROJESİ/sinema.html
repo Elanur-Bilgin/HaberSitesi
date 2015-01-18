@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8" />
+<title>SİNEMA</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-2.1.3.js"> </script>
+
+<script type="text/javascript">
+$( function(){			
+			var Slider=0;
+			$.Slider=function(toplam){
+				 $("#slider ul#slider_button li").removeClass("aktif");
+				 $("#slider ul#slider_resim li").hide();
+				 if(Slider < toplam-1){
+					  Slider++;
+					  $("#slider ul#slider_button li:eq("+Slider+")").addClass("aktif");
+					  $("#slider ul#slider_resim li:eq("+Slider+")").fadeIn("fast");
+					  }
+				 else{
+					  $("#slider ul#slider_button li:first").addClass("aktif"); 
+					  $("#slider ul#slider_resim li:first").fadeIn("fast");
+					  Slider=0;
+					 }
+				}
+			var toplamLi=$("#slider ul#slider_resim li").length;
+			var interval=setInterval('$.Slider('+toplamLi+')',2000);
+			
+			<!--slider'ın üstüne geldiğinde durması için-->
+			$("#slider").hover( 
+				function(){ clearInterval(interval);},
+			<!--üzerinden çekilince devam etmesi için-->
+			    function(){interval=setInterval('$.Slider('+toplamLi+')',2000);}
+				);
+ $("#slider ul#slider_button li:first").addClass("aktif"); 
+ $("#slider ul#slider_resim li").hide();
+  $("#slider ul#slider_resim li:first").show();
+  $("#slider ul#slider_button li").click(function(){
+				var indis=$(this).index();
+				$("#slider ul#slider_button li").removeClass("aktif");
+				$(this).addClass("aktif");
+				$("#slider ul#slider_resim li").hide();
+				$("#slider ul#slider_resim li:eq("+indis+")").fadeIn("fast");
+				<!--üzerinden çekilince kaldığı yerden devam etmesi için-->
+			    Slider=indis;
+				return false
+  });
+ });
+</script>
+
+
+<script>
+   function  kaynakSec(etkiId,diger1,diger2,diger3){
+	        document.getElementById(etkiId).style.visibility="visible";
+            document.getElementById(diger1).style.visibility="hidden";
+            document.getElementById(diger2).style.visibility="hidden";
+            document.getElementById(diger3).style.visibility="hidden";			
+   }
+   
+</script>
+
+</head>
+
+
+<body>
+
+<header>
+<div id="logo">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/logo.jpg"/>
+</div>
+
+
+<div id="baslik"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema.html">SİNEMA</a></div>
+
+
+
+<form action="http://www.google.com.tr/cse" id="cse-search-box"> 
+<div> <input type="hidden" name="cx" value="partner-pub-8354833046886770:fdhnsq-rocg" /> 
+<input type="hidden" name="ie" value="ISO-8859-9" /> 
+<input type="text" name="q" size="20" /> 
+<input type="submit" name="sa" value="Ara" />
+</div> </form> 
+<script type="text/javascript" src="http://www.google.com.tr/cse/brand?form=cse-search-box&amp;lang=tr"></script> 
+
+<script type="text/javascript">
+function date_operation()
+{	
+var time=new Date();
+
+function sifir_ekleme(veri)
+{   if(veri<10) return "0"+veri;
+    else return veri;
+}
+var day= sifir_ekleme(time.getDate());
+var mounth=sifir_ekleme(time.getMonth()); mounth=mounth+1;
+var year=sifir_ekleme(time.getFullYear());
+var date=day +"/"+mounth+"/"+year;
+
+var hours=time.toLocaleTimeString();
+
+document.getElementById("operation").value=date;
+document.getElementById("operation2").value=hours;
+}
+setInterval("date_operation()",1000);
+</script>
+
+<input  type="text"  id="operation" />
+<input  type="text"  id="operation2"/>
+</header>
+
+<nav>
+<ul>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/index.html"> ANA SAYFA</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset.html"> SİYASET</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomi.html"> EKONOMİ</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin.html"> MAGAZİN</a></li>
+<li> <a href="http://sorubank2.ege.edu.tr/~b051140/proje/bilim.html">BİLİM</a></li>
+<li> <a href="http://sorubank2.ege.edu.tr/~b051140/proje/spor.html">SPOR</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/saglik.html"> SAĞLIK</a></li>
+<li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/egitim.html"> EĞİTİM</a></li>
+<li class="nav_li_diger"> 
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+    <ul>
+    <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/kultur.html">KÜLTÜR</a></li>
+    <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema.html">SİNEMA</a></li>
+    </ul>
+</li>
+
+</ul>
+</div>
+</nav>
+
+
+<article>
+
+<div id="slider">
+<ul id="slider_resim">
+   <li style="background-image:url(img/fft81_mf2863562.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_1.html">'Kar Korsanları' Berlin Film Festivali'ne seçildi</a></li>
+   <li style="background-image:url(img/fft81_mf2861764.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_2.html">En azından Musa'ya yaranıyor!</a></li>
+   <li style="background-image:url(img/fft81_mf2996900.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_3.html">'Kuvayı Milliye' saflarında bir 'Gladyatör'</a></li>
+   <li style="background-image:url(img/fft81_mf2855381.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_4.html">Yaşasaydı politikacılarınıza ateş püskürürdü</a></li>
+   <li style="background-image:url(img/fft81_mf2935599.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_5.html">Gökyüzünde kırpık kırpık gezen yıldızlar</a></li>
+   <li style="background-image:url(img/fft81_mf2987561.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_6.html">Angelina Jolie: 'Düğünümde çocuklarımın da olması eğlenceliydi'</a></li>
+   <li style="background-image:url(img/fft81_mf2863058.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_7.html">Matthew McConaughey Radikal'e konuştu</a></li>
+   <li style="background-image:url(img/fft81_mf2791708.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_8.html">'100. yılda 100 film' düşü gerçek oldu</a></li>
+   <li style="background-image:url(img/fft81_mf2817542.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa91.html">Sürpriz ikiliden 'Muhteşem Bir Son'</a></li>
+   <li style="background-image:url(img/fft81_mf2852761.Jpeg)"><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_10.html">Yasal yoldan iyi film izlemek için: MUBI Türkiye</a></li>
+</ul>
+
+<ul id="slider_button">
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_1.html">1</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_2.html">2</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_3.html">3</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_4.html">4</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_5.html">5</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_6.html">6</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_7.html">7</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_8.html">8</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_9.html">9</a></li>
+   <li><a href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_10.html">10</a></li>
+</ul>
+</div>
+
+<div class="haber_border">
+<div class="haber" id="haber_1">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_10.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2852761.Jpeg" ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_10.html"target="_blank">Yasal yoldan iyi film izlemek için: MUBI Türkiye</a></div></div>
+
+<div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_9.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2817542.Jpeg"  ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_9.html"target="_blank">Sürpriz ikiliden 'Muhteşem Bir Son'</a></div></div>
+
+<div class="haber" >
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_8.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2791708.Jpeg"  ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_8.html"target="_blank">'100. yılda 100 film' düşü gerçek oldu</a></div></div><br>
+
+<div class="haber" id="haber_2">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_7.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2863058.Jpeg" ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_7.html"target="_blank">Matthew McConaughey Radikal'e konuştu</a></div></div>
+
+<div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_6.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2987561.Jpeg"></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_6.html"target="_blank">Angelina Jolie: 'Düğünümde çocuklarımın da olması eğlenceliydi'</a></div></div>
+
+<div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_5.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2935599.Jpeg" ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_5.html"target="_blank">Gökyüzünde kırpık kırpık gezen yıldızlar</a></div></div>
+
+
+<div class="haber" id="haber_3" >
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_4.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2855381.Jpeg"  ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_4.html"target="_blank">Yaşasaydı politikacılarınıza ateş püskürürdü</a></div></div>
+
+<div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_3.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2996900.Jpeg"></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_3.html"target="_blank">'Kuvayı Milliye' saflarında bir 'Gladyatör'</a></div></div>
+
+<div class="haber">
+<a target="_blank" href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_2.html">
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2861764.Jpeg" ></a>
+<div class="haber_baslik">
+<a  href="http://sorubank2.ege.edu.tr/~b051140/proje/sinema/sinema_alt_sayfa_2.html"target="_blank">En azından Musa'ya yaranıyor!</a></div></div>
+
+</div>
+
+</article>
+
+
+<aside>
+<table class="yazarlar">
+				<tr><td id="yazar_gradient">YAZARLAR</td></tr>
+				<tr><td class="yazar_haber_baslik"> HABERLER.COM Gazete Yazarlari</td></tr>
+				<tr><td><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf3855984.Jpeg" >Belma AKÇURA</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf2863550.Jpeg"/>Tunca BELGİN</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/jale_ozgenturk_200x200.jpg"/>Jale Özgentürk</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft62_mf1709163.Jpeg"  />Serpil ÇEVİKCAN</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/148.jpg"/>Mehmet Yılmaz</td></tr>
+				<tr><td> <img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/10.jpg" />Cengiz Candaryeni</td></tr>			
+</table>
+
+<div class="reklam"> 
+<img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/Deniz_feneri_manzaras_gne_deniz.jpg">
+</div>
+
+<table class="encok_okunan_haberler">
+<tr><td class="yazar_haber_baslik"> En Çok Okunan Haberler</td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/magazin/magazin_alt_sayfa_5.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2946406.Jpeg" >Hayırlı evlat Tarkan</a></td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/siyaset/siyaset_alt_sayfa_7.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/ocalan-iki-aylik-takvimlendirme-yapti-5109964.Jpeg"> Öcalan iki aylık takvimlendirme yaptı</a> </td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomik/ekonomik_alt_sayfa_6.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/fft81_mf2945073.Jpeg" >Otomatik ödeme talimatı artık ücretli</a> </td></tr>
+<tr><td><a  href="http://sorubank2.ege.edu.tr/~b051140/proje/ekonomik/ekonomik_alt_sayfa_8.html"><img src="http://sorubank2.ege.edu.tr/~b051140/proje/img/iste-2015-memur-alimlari-5110546.Jpeg" >İşte 2015 memur alımları</a>  </td></tr>
+</table>
+ 
+ 
+ 
+                
+</aside>
+<div class="clear"></div>
+<footer>Tüm Hakları Saklıdır.     &#0169;DOST YAPIM</footer>
+
+
+</body>
+</html>
